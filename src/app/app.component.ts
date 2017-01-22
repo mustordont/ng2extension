@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuComponent } from './menu/menu.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  public searchRequest: string = '';
+  makeSearchRequest() {
+    chrome.tabs.update({
+        url: "http://go.mail.ru/search?q="+this.searchRequest
+    });
+  }
 }

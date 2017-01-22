@@ -1,3 +1,19 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <md-toolbar class="header" color="primary">
+    
+    <main-menu></main-menu>
+    
+    Angular 2 Extension
+
+    <md-input-container style="width: 100%">
+      <input md-input placeholder="Search" [(ngModel)]="searchRequest">
+    </md-input-container>
+
+    <button md-raised-button color="primary" (click)="makeSearchRequest()" [disabled]="!searchRequest">
+      Go
+    </button>
+
+  </md-toolbar>
+
+  <quick-links></quick-links>
+</div>

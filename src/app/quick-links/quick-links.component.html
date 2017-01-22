@@ -1,0 +1,12 @@
+<md-grid-list cols="4" dnd-sortable-container [sortableData]="topSites">
+  
+  <md-grid-tile *ngFor="let site of topSites; let i = index;" dnd-sortable [sortableIndex]="i" (onDropSuccess)="updateUserTopSites()">
+    <md-card (click)="goToURL(site.url)">
+        <md-card-header>
+            <img md-card-avatar src="{{site.domain + '/favicon.ico'}}"/>
+            <md-card-title title="{{site.title}}">{{site.title}}</md-card-title>
+        </md-card-header>
+    </md-card>
+  </md-grid-tile>
+
+</md-grid-list>
